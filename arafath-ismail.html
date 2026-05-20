@@ -240,6 +240,13 @@
     /* ─── FOOTER TREE ─── */
     .footer-tree { text-align: center; padding-block: 48px 64px; background: rgba(11,28,17,0.85); }
     .footer-tree-img { width: 100%; max-width: 280px; height: auto; display: block; margin-inline: auto; border-radius: 16px; opacity: 0.88; }
+
+    /* ─── VIDEO OVERLAY CUSTOM ─── */
+    .vid-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; background: linear-gradient(150deg, rgba(11,28,17,0.90) 0%, rgba(6,9,6,0.94) 100%); cursor: pointer; transition: opacity 0.35s ease; }
+    .vid-overlay:hover .video-play { transform: scale(1.1); border-color: rgba(144,210,160,0.75); }
+    .vid-cta { font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(144,210,160,0.75); text-align: center; line-height: 1.6; letter-spacing: 0.02em; }
+    .vid-overlay.hidden { opacity: 0; pointer-events: none; }
+    .vid-label { font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--gold); text-align: center; margin-top: 14px; letter-spacing: 0.05em; text-shadow: 0 0 18px rgba(201,169,110,0.35); }
 </style>
 </head>
 <body>
@@ -322,18 +329,34 @@
     <span class="tag reveal">La preuve</span>
     <h2 class="section-title reveal d1">Votre arbre, <em>pour de vrai</em></h2>
     <p class="body-text reveal d2">Voici les vidéos de la plantation. La réalité du geste, sans filtre.</p>
-    <div class="video-box reveal d3" style="aspect-ratio: auto; cursor: default;">
-      <video controls playsinline preload="metadata" style="width:100%;height:auto;display:block;">
+    <div class="video-box reveal d3">
+      <video id="vid-arafath" playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;">
         <source src="https://medias.kebchi.fr/said/arbre-2026/K26042311065_7fud8npt7j.mp4" type="video/mp4">
       </video>
+      <div class="vid-overlay" onclick="playVid('vid-arafath',this)">
+        <div class="video-play">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8 5.14v13.72L19 12 8 5.14z" fill="rgba(144,210,160,0.8)"></path>
+          </svg>
+        </div>
+        <p class="vid-cta">Lance la vidéo pour<br>découvrir ta plantation</p>
+      </div>
     </div>
-    <p class="video-caption-main reveal" style="margin-top:10px;">La plantation d'Arafath</p>
-    <div class="video-box reveal d1" style="aspect-ratio: auto; cursor: default; margin-top: 20px;">
-      <video controls playsinline preload="metadata" style="width:100%;height:auto;display:block;">
+    <p class="vid-label reveal">La plantation d'Arafath</p>
+    <div class="video-box reveal d1">
+      <video id="vid-ismail" playsinline preload="none" style="width:100%;height:100%;object-fit:cover;display:block;">
         <source src="https://medias.kebchi.fr/said/arbre-2026/K26042311065_9ti3z9bcty.mp4" type="video/mp4">
       </video>
+      <div class="vid-overlay" onclick="playVid('vid-ismail',this)">
+        <div class="video-play">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8 5.14v13.72L19 12 8 5.14z" fill="rgba(144,210,160,0.8)"></path>
+          </svg>
+        </div>
+        <p class="vid-cta">Lance la vidéo pour<br>découvrir ta plantation</p>
+      </div>
     </div>
-    <p class="video-caption-main reveal d1" style="margin-top:10px;">La plantation d'Ismail</p>
+    <p class="vid-label reveal d1">La plantation d'Ismail</p>
     <p class="video-tagline reveal d2">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, vos arbres portent votre nom.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
@@ -403,6 +426,11 @@ function initParticles(canvasEl, sectionEl) {
 
 initParticles(document.getElementById('ptx'), document.querySelector('.hero'));
 initParticles(document.querySelector('.sig-ptx'), document.querySelector('.section-signature'));
+
+function playVid(id, overlay) {
+  overlay.classList.add('hidden');
+  document.getElementById(id).play();
+}
 </script>
 
 
