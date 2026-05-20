@@ -453,7 +453,7 @@ function playVid(id, overlay) {
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
-  const map = L.map('plantation-map', { scrollWheelZoom: false, zoomControl: true })
+  const map = L.map('plantation-map', { scrollWheelZoom: false, zoomControl: true, attributionControl: false })
     .setView([-23.3201, 43.6472], 14);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
