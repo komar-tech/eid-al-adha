@@ -5,6 +5,7 @@
   <title>Eid Mubarak — Mes Chéris</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
 
   <style>
@@ -247,6 +248,12 @@
     .vid-cta { font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(144,210,160,0.75); text-align: center; line-height: 1.6; letter-spacing: 0.02em; }
     .vid-overlay.hidden { opacity: 0; pointer-events: none; }
     .vid-label { font-family: var(--font-display); font-style: italic; font-size: 20px; color: var(--gold); text-align: center; margin-top: 14px; letter-spacing: 0.05em; text-shadow: 0 0 18px rgba(201,169,110,0.35); }
+
+    /* ─── CARTE PLANTATION ─── */
+    .map-wrap { margin-top: 32px; }
+    #plantation-map { height: 230px; border-radius: 16px; border: 1px solid var(--border); }
+    .map-btn { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; padding: 10px 22px; border: 1px solid rgba(201,169,110,0.4); border-radius: 30px; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; transition: border-color 0.3s, background 0.3s; width: fit-content; margin-inline: auto; }
+    .map-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.06); }
 </style>
 </head>
 <body>
@@ -306,6 +313,14 @@
       </div>
     </div>
     <p class="arbre-note reveal d3">Le dattier est l'un des arbres les plus bénis mentionnés dans le Coran. Il porte ses fruits généreusement, offre de l'ombre à ceux qui s'approchent, et continue à nourrir longtemps après ceux qui l'ont planté.</p>
+    <div class="map-wrap reveal d4">
+      <span class="tag" style="text-align:center;display:block;margin-bottom:12px;">Localisation de la plantation</span>
+      <div id="plantation-map"></div>
+      <a class="map-btn" href="https://www.google.com/maps?q=-23.3201,43.6472" target="_blank" rel="noopener noreferrer">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ouvrir dans Maps
+      </a>
+    </div>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -436,4 +451,24 @@ function playVid(id, overlay) {
 </script>
 
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+  const map = L.map('plantation-map', { scrollWheelZoom: false, zoomControl: true })
+    .setView([-23.3201, 43.6472], 14);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 19
+  }).addTo(map);
+  const goldMarker = L.divIcon({
+    html: '<div style="width:14px;height:14px;background:#C9A96E;transform:rotate(45deg);border-radius:2px;box-shadow:0 0 14px rgba(201,169,110,0.7);"></div>',
+    className: '',
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+    popupAnchor: [0, -10]
+  });
+  L.marker([-23.3201, 43.6472], { icon: goldMarker })
+    .addTo(map)
+    .bindPopup('<span style="font-family:serif;font-style:italic;color:#C9A96E;">Votre dattier · Madagascar</span>')
+    .openPopup();
+</script>
 </body></html>
