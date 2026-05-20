@@ -429,7 +429,9 @@ initParticles(document.querySelector('.sig-ptx'), document.querySelector('.secti
 
 function playVid(id, overlay) {
   overlay.classList.add('hidden');
-  document.getElementById(id).play();
+  const vid = document.getElementById(id);
+  vid.play();
+  vid.addEventListener('ended', () => overlay.classList.remove('hidden'), { once: true });
 }
 </script>
 
