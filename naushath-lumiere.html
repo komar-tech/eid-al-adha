@@ -2,7 +2,7 @@
 <html lang="fr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eid Mubarak — Naushath · Jardin Émeraude</title>
+  <title>Eid Mubarak — Naushath</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
@@ -58,7 +58,6 @@
     .d3 { transition-delay: 0.36s; } .d4 { transition-delay: 0.48s; }
 
     /* ─── DIVIDER ─── */
-    /* Dividers anchored inside sections — no body background bleed */
     section .divider { margin-top: 52px; margin-bottom: 0; opacity: 0.45; }
     .divider { display: flex; align-items: center; gap: 14px; opacity: 0.5; margin-block: 0; }
     .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--gold); }
@@ -171,6 +170,12 @@
     .video-caption-sub { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(144,210,160,0.32); }
     .video-tagline { font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--muted); line-height: 1.7; }
 
+    /* ── VIDEO OVERLAY ── */
+    .vid-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; background: linear-gradient(150deg, rgba(11,28,17,0.90) 0%, rgba(6,9,6,0.94) 100%); cursor: pointer; transition: opacity 0.35s ease; }
+    .vid-overlay:hover .video-play { transform: scale(1.1); border-color: rgba(144,210,160,0.75); }
+    .vid-cta { font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(144,210,160,0.75); text-align: center; line-height: 1.6; letter-spacing: 0.02em; }
+    .vid-overlay.hidden { opacity: 0; pointer-events: none; }
+
     /* ════════════════ SIGNATURE ════════════════ */
     .section-signature {
       text-align: center;
@@ -212,17 +217,12 @@
     .sig-r { width: 48px; height: 1px; background: linear-gradient(to left, transparent, var(--gold)); }
     .sig-gem { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); }
 
-    /* ─── QUOTE — centré, sans bordure latérale ─── */
+    /* ─── QUOTE ─── */
     .quote-block { margin-block: 36px; text-align: center; padding-inline: 8px; }
     .quote-diamond { width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); margin-inline: auto; opacity: 0.6; margin-bottom: 22px; }
     .quote-text { font-family: var(--font-display); font-style: italic; font-size: clamp(17px,4.5vw,21px); line-height: 1.72; color: var(--fg); letter-spacing: 0.01em; }
     .quote-ref { margin-top: 18px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.7; }
     .quote-diamond-bottom { width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); margin-inline: auto; opacity: 0.6; margin-top: 22px; }
-
-    /* ─── IMPACT STAT ─── */
-    .impact-stat { text-align: center; padding-block: 36px 28px; }
-    .impact-number { font-family: var(--font-display); font-size: clamp(56px,16vw,80px); font-weight: 300; line-height: 1; color: var(--gold); letter-spacing: -0.02em; }
-    .impact-unit { display: block; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
 
     /* ─── KEYFRAMES ─── */
     @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
@@ -236,10 +236,6 @@
 
     @media (min-width: 768px)  { .container { max-width: 540px; } section { padding-block: 88px; } }
     @media (min-width: 1024px) { .container { max-width: 620px; } }
-  
-    /* ─── FOOTER TREE ─── */
-    .footer-tree { text-align: center; padding-block: 48px 64px; background: rgba(11,28,17,0.85); }
-    .footer-tree-img { width: 100%; max-width: 280px; height: auto; display: block; margin-inline: auto; border-radius: 16px; opacity: 0.88; }
 </style>
 </head>
 <body>
@@ -249,7 +245,7 @@
   <canvas id="ptx"></canvas>
   <div class="hero-frame"><span class="c3"></span><span class="c4"></span></div>
   <div class="container hero-content">
-    <span class="hero-eyebrow">عيد مبارك · Aïd al-Adha 1447</span>
+    <span class="hero-eyebrow">عيد مبارك · Eid al-Adha 1447</span>
     <h1 class="hero-greeting">Eid Mubarak,<br><span class="hero-name">Naushath</span></h1>
     <p class="hero-line">Un arbre a été planté en ton nom.</p>
     <div class="hero-sub">
@@ -270,7 +266,7 @@
   <div class="container">
     <span class="tag reveal">Le sens du cadeau</span>
     <h2 class="section-title reveal d1">Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha</h2>
-    <p class="body-text reveal d2">En ce jour béni, nous avons voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.</p>
+    <p class="body-text reveal d2">En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.</p>
     <div class="quote-block reveal d3">
       <div class="quote-diamond"></div>
       <p class="quote-text">« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »</p>
@@ -290,8 +286,6 @@
     <div class="arbre-grid">
       <div class="arbre-card reveal">
         <p class="arbre-label">Espèce</p>
-        
-        <!-- TODO: espèce à confirmer -->
         <p class="arbre-value">Dattier<br><small>Phoenix dactylifera</small></p>
       </div>
       <div class="arbre-card reveal d1">
@@ -322,16 +316,15 @@
   <div class="container">
     <span class="tag reveal">La preuve</span>
     <h2 class="section-title reveal d1">Ton arbre, <em>pour de vrai</em></h2>
-    <p class="body-text reveal d2">Voici la vidéo de la plantation. La réalité du geste, sans filtre.</p>
-    <div class="video-box reveal d3">
-      <div class="video-inner">
-        <div class="video-play">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M8 5.14v13.72L19 12 8 5.14z" fill="rgba(144,210,160,0.8)"></path>
+    <p class="body-text reveal d2">La vidéo de ta plantation arrive bientôt.</p>
+    <div class="video-box reveal d3" style="cursor:default;">
+      <div class="vid-overlay" style="cursor:default;">
+        <div class="video-play" style="border-color:rgba(144,210,160,0.2);opacity:0.5;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(144,210,160,0.65)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
           </svg>
         </div>
-        <p class="video-caption-main">La plantation de ton arbre</p>
-        <p class="video-caption-sub">La vidéo sera disponible ici</p>
+        <p class="vid-cta">La vidéo arrive<br>très bientôt</p>
       </div>
     </div>
     <p class="video-tagline reveal d4">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
@@ -344,10 +337,10 @@
   <canvas class="sig-ptx"></canvas>
   <div class="container">
     <p class="sig-from reveal">De la part de</p>
-    <h2 class="sig-name reveal d1">Ismail</h2>
+    <h2 class="sig-name reveal d1">Tata Naushath</h2>
     <p class="reveal d2" lang="ar" style="font-family: var(--font-display); font-size: clamp(22px,6vw,30px); font-weight: 300; color: var(--gold); letter-spacing: 0.06em; margin-top: 28px; line-height: 1.5; direction: rtl;">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</p>
     <p class="reveal d3" style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; color: var(--muted); margin-top: 8px; font-style: italic;">Puisse Allah accepter de nous et de vous.</p>
-    <p class="sig-dua reveal d4">Qu'Il vous accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
+    <p class="sig-dua reveal d4">Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
     <div class="sig-ornament reveal d3">
       <div class="sig-l"></div><div class="sig-gem"></div><div class="sig-r"></div>
     </div>
@@ -361,8 +354,6 @@ const ro = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
 }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
 revealEls.forEach(el => ro.observe(el));
-
-
 
 function initParticles(canvasEl, sectionEl) {
   const ctx = canvasEl.getContext('2d');
@@ -404,6 +395,4 @@ function initParticles(canvasEl, sectionEl) {
 initParticles(document.getElementById('ptx'), document.querySelector('.hero'));
 initParticles(document.querySelector('.sig-ptx'), document.querySelector('.section-signature'));
 </script>
-
-
 </body></html>
