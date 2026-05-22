@@ -2,7 +2,7 @@
 <html lang="fr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eid Mubarak — Alex</title>
+  <title>Eid Mubarak — Tonton Alex</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Inter:wght@300;400&amp;display=swap" rel="stylesheet">
@@ -127,32 +127,9 @@
 
     /* ════════════════ ARBRE ════════════════ */
     .section-arbre { text-align: center; background: rgba(11,28,17,0.85); }
-    .arbre-img-wrap { margin-block: 36px; }
-    .arbre-img { width: 100%; max-width: 180px; height: auto; display: block; margin-inline: auto; border-radius: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(201,169,110,0.18); }
-    .bp { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-    .b-trunk { stroke: var(--gold); stroke-width: 5; stroke-dasharray: 115; stroke-dashoffset: 115; transition: stroke-dashoffset 1.4s var(--ease) 0s; }
-    .b-m1    { stroke: var(--gold); stroke-width: 3.5; stroke-dasharray: 75; stroke-dashoffset: 75; transition: stroke-dashoffset 1.2s var(--ease) 0.35s; }
-    .b-m2    { stroke: var(--gold); stroke-width: 3.5; stroke-dasharray: 75; stroke-dashoffset: 75; transition: stroke-dashoffset 1.2s var(--ease) 0.45s; }
-    .b-u1    { stroke: var(--gold); stroke-width: 2.5; stroke-dasharray: 60; stroke-dashoffset: 60; transition: stroke-dashoffset 1s var(--ease) 0.7s; }
-    .b-u2    { stroke: var(--gold); stroke-width: 2.5; stroke-dasharray: 60; stroke-dashoffset: 60; transition: stroke-dashoffset 1s var(--ease) 0.8s; }
-    .b-s1    { stroke: #E8C87A; stroke-width: 2; stroke-dasharray: 45; stroke-dashoffset: 45; transition: stroke-dashoffset 0.9s var(--ease) 1.0s; }
-    .b-s2    { stroke: #E8C87A; stroke-width: 2; stroke-dasharray: 45; stroke-dashoffset: 45; transition: stroke-dashoffset 0.9s var(--ease) 1.05s; }
-    .b-s3    { stroke: #E8C87A; stroke-width: 2; stroke-dasharray: 40; stroke-dashoffset: 40; transition: stroke-dashoffset 0.9s var(--ease) 1.1s; }
-    .b-s4    { stroke: #E8C87A; stroke-width: 2; stroke-dasharray: 40; stroke-dashoffset: 40; transition: stroke-dashoffset 0.9s var(--ease) 1.15s; }
-    .b-top   { stroke: var(--gold); stroke-width: 2.5; stroke-dasharray: 30; stroke-dashoffset: 30; transition: stroke-dashoffset 0.9s var(--ease) 0.7s; }
-    .tree-wrap.grown .bp { stroke-dashoffset: 0 !important; }
-    .tree-leaf { opacity: 0; transition: opacity 0.7s ease; }
-    .tree-wrap.grown .tree-leaf { opacity: 1; }
-    .tree-leaf.l1 { transition-delay: 1.35s; } .tree-leaf.l2 { transition-delay: 1.5s; }
-    .tree-leaf.l3 { transition-delay: 1.65s; } .tree-leaf.l4 { transition-delay: 1.8s; }
-    .tree-leaf.l5 { transition-delay: 1.95s; }
-
-    .arbre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-block: 28px; }
-    .arbre-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: left; }
-    .arbre-card.span-2 { grid-column: 1 / -1; }
+    .arbre-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
     .arbre-label { font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
     .arbre-value { font-family: var(--font-display); font-size: 17px; color: var(--fg); line-height: 1.3; }
-    .arbre-value small { font-size: 12px; color: var(--muted); font-style: italic; }
     .arbre-note { font-family: var(--font-display); font-style: italic; font-size: 17px; line-height: 1.75; color: var(--muted); }
 
     /* ════════════════ IMPACT ════════════════ */
@@ -163,18 +140,10 @@
     /* ════════════════ VIDÉO ════════════════ */
     .section-video { text-align: center; background: rgba(11,28,17,0.85); }
     .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; position: relative; cursor: pointer; border: 1px solid var(--border); }
-    .video-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: linear-gradient(150deg, #0B1C11 0%, #061009 100%); transition: opacity 0.3s ease; }
     .video-play { width: 60px; height: 60px; border: 1.5px solid rgba(144,210,160,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s var(--ease), border-color 0.3s; }
-    .video-box:hover .video-play { transform: scale(1.1); border-color: rgba(144,210,160,0.7); }
-    .video-caption-main { font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(144,210,160,0.7); }
-    .video-caption-sub { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(144,210,160,0.32); }
     .video-tagline { font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--muted); line-height: 1.7; }
-
-    /* ── VIDEO OVERLAY ── */
     .vid-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; background: linear-gradient(150deg, rgba(11,28,17,0.90) 0%, rgba(6,9,6,0.94) 100%); cursor: pointer; transition: opacity 0.35s ease; }
-    .vid-overlay:hover .video-play { transform: scale(1.1); border-color: rgba(144,210,160,0.75); }
     .vid-cta { font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(144,210,160,0.75); text-align: center; line-height: 1.6; letter-spacing: 0.02em; }
-    .vid-overlay.hidden { opacity: 0; pointer-events: none; }
 
     /* ════════════════ SIGNATURE ════════════════ */
     .section-signature {
@@ -246,7 +215,7 @@
   <div class="hero-frame"><span class="c3"></span><span class="c4"></span></div>
   <div class="container hero-content">
     <span class="hero-eyebrow">عيد مبارك · Eid al-Adha 1447</span>
-    <h1 class="hero-greeting">Eid Mubarak,<br><span class="hero-name">Alex</span></h1>
+    <h1 class="hero-greeting">Eid Mubarak,<br><span class="hero-name">Tonton Alex</span></h1>
     <p class="hero-line">Un arbre a été planté en ton nom.</p>
     <div class="hero-sub">
       <div class="hero-sub-line"></div>
@@ -282,18 +251,14 @@
 <section class="section-arbre">
   <div class="container">
     <span class="tag reveal">Ton arbre</span>
-    <h2 class="section-title reveal d1">Un dattier,<br><em>planté pour toi</em></h2>
-    <div class="arbre-grid">
+    <h2 class="section-title reveal d1">Un arbre,<br><em>planté pour toi</em></h2>
+    <div style="max-width:200px; margin-inline:auto; margin-block:28px;">
       <div class="arbre-card reveal">
-        <p class="arbre-label">Espèce</p>
-        <p class="arbre-value">Dattier<br><small>Phoenix dactylifera</small></p>
-      </div>
-      <div class="arbre-card reveal d1">
         <p class="arbre-label">Lieu</p>
         <p class="arbre-value">Madagascar</p>
       </div>
     </div>
-    <p class="arbre-note reveal d3">Le dattier est l'un des arbres les plus bénis mentionnés dans le Coran. Il porte ses fruits généreusement, offre de l'ombre à ceux qui s'approchent, et continue à nourrir longtemps après ceux qui l'ont planté.</p>
+    <p class="arbre-note reveal d3">Un arbre a été planté en ton nom, quelque part sur cette terre. Il poussera, offrira de l'ombre, nourrira la terre — et continuera à porter tes bienfaits longtemps après toi.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -304,7 +269,7 @@
     <span class="tag reveal">Son impact</span>
     <h2 class="section-title reveal d1">Un geste <em>durable</em></h2>
     <div class="impact-card reveal d2">
-      <p class="impact-headline">Ce dattier absorbera des tonnes de CO₂ au fil des décennies, nourrira des familles de ses fruits, et offrira de l'ombre à ceux qui passeront.</p>
+      <p class="impact-headline">En grandissant, cet arbre participera à l'équilibre écologique de la région, captera du carbone et contribuera au bien-être des communautés locales pour des décennies.</p>
       <p class="body-text">Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.</p>
     </div>
     <div class="divider"><div class="divider-gem"></div></div>
@@ -337,7 +302,7 @@
   <canvas class="sig-ptx"></canvas>
   <div class="container">
     <p class="sig-from reveal">De la part de</p>
-    <h2 class="sig-name reveal d1">Tonton Alex</h2>
+    <h2 class="sig-name reveal d1">Ismail</h2>
     <p class="reveal d2" lang="ar" style="font-family: var(--font-display); font-size: clamp(22px,6vw,30px); font-weight: 300; color: var(--gold); letter-spacing: 0.06em; margin-top: 28px; line-height: 1.5; direction: rtl;">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</p>
     <p class="reveal d3" style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; color: var(--muted); margin-top: 8px; font-style: italic;">Puisse Allah accepter de nous et de vous.</p>
     <p class="sig-dua reveal d4">Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
