@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr"><head>
+<html lang="fr" dir="ltr"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eid Mubarak — Papa</title>
@@ -224,6 +224,41 @@
     .quote-ref { margin-top: 18px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.7; }
     .quote-diamond-bottom { width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); margin-inline: auto; opacity: 0.6; margin-top: 22px; }
 
+    /* ─── LANG SWITCHER ─── */
+    #lang-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 9999;
+      background: rgba(11,28,17,0.92);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      padding: 8px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+      line-height: 1.4;
+    }
+    #lang-btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 4px 24px rgba(201,169,110,0.28);
+    }
+
+    /* ─── RTL OVERRIDES (Urdu) ─── */
+    html[dir="rtl"] .arbre-card { text-align: right; }
+    html[dir="rtl"] .tag,
+    html[dir="rtl"] .scroll-hint-label,
+    html[dir="rtl"] .sig-from,
+    html[dir="rtl"] .quote-ref,
+    html[dir="rtl"] .arbre-label { letter-spacing: 0.04em; }
+
     /* ─── KEYFRAMES ─── */
     @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
     @keyframes nameReveal    { from { opacity: 0; transform: translateY(10px) scale(0.97); filter: blur(4px); } to { opacity: 1; transform: none; filter: blur(0); } }
@@ -245,17 +280,17 @@
   <canvas id="ptx"></canvas>
   <div class="hero-frame"><span class="c3"></span><span class="c4"></span></div>
   <div class="container hero-content">
-    <span class="hero-eyebrow">عيد مبارك · Eid al-Adha 1447</span>
-    <h1 class="hero-greeting">Eid Mubarak,<br><span class="hero-name">Papa</span></h1>
-    <p class="hero-line">Un arbre a été planté en ton nom.</p>
+    <span class="hero-eyebrow" data-i18n="eyebrow">عيد مبارك · Eid al-Adha 1447</span>
+    <h1 class="hero-greeting" data-i18n="hero-greeting">Eid Mubarak,<br><span class="hero-name">Papa</span></h1>
+    <p class="hero-line" data-i18n="hero-line">Un arbre a été planté en ton nom.</p>
     <div class="hero-sub">
       <div class="hero-sub-line"></div>
-      <p class="hero-sub-text">Un bienfait semé ne s'éteint jamais</p>
+      <p class="hero-sub-text" data-i18n="hero-sub-text">Un bienfait semé ne s'éteint jamais</p>
       <div class="hero-sub-line"></div>
     </div>
   </div>
   <div class="scroll-hint">
-    <span class="scroll-hint-label">Découvrir</span>
+    <span class="scroll-hint-label" data-i18n="scroll-hint">Découvrir</span>
     <div class="scroll-hint-bar"></div>
   </div>
 </section>
@@ -264,16 +299,16 @@
 <!-- ═══ SENS ═══ -->
 <section class="section-sens">
   <div class="container">
-    <span class="tag reveal">Le sens du cadeau</span>
-    <h2 class="section-title reveal d1">Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha</h2>
-    <p class="body-text reveal d2">En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.</p>
+    <span class="tag reveal" data-i18n="sens-tag">Le sens du cadeau</span>
+    <h2 class="section-title reveal d1" data-i18n="sens-h2">Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha</h2>
+    <p class="body-text reveal d2" data-i18n="sens-body1">En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.</p>
     <div class="quote-block reveal d3">
       <div class="quote-diamond"></div>
-      <p class="quote-text">« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »</p>
-      <p class="quote-ref">Hadith · Sahih Muslim</p>
+      <p class="quote-text" data-i18n="quote-text">« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »</p>
+      <p class="quote-ref" data-i18n="quote-ref">Hadith · Sahih Muslim</p>
       <div class="quote-diamond-bottom"></div>
     </div>
-    <p class="body-text reveal d4">Chaque fois que cet arbre purifiera l'air, offrira de l'ombre ou nourrira la terre, une récompense continuera, in shaa Allah, te sera inscrite.</p>
+    <p class="body-text reveal d4" data-i18n="sens-body2">Chaque fois que cet arbre purifiera l'air, offrira de l'ombre ou nourrira la terre, une récompense continuera, in shaa Allah, te sera inscrite.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -281,19 +316,19 @@
 <!-- ═══ ARBRE ═══ -->
 <section class="section-arbre">
   <div class="container">
-    <span class="tag reveal">Ton arbre</span>
-    <h2 class="section-title reveal d1">Un dattier,<br><em>planté pour toi</em></h2>
+    <span class="tag reveal" data-i18n="arbre-tag">Ton arbre</span>
+    <h2 class="section-title reveal d1" data-i18n="arbre-h2">Un dattier,<br><em>planté pour toi</em></h2>
     <div class="arbre-grid">
       <div class="arbre-card reveal">
-        <p class="arbre-label">Espèce</p>
-        <p class="arbre-value">Dattier<br><small>Phoenix dactylifera</small></p>
+        <p class="arbre-label" data-i18n="arbre-lbl-esp">Espèce</p>
+        <p class="arbre-value" data-i18n="arbre-val-esp">Dattier<br><small>Phoenix dactylifera</small></p>
       </div>
       <div class="arbre-card reveal d1">
-        <p class="arbre-label">Lieu</p>
-        <p class="arbre-value">Madagascar</p>
+        <p class="arbre-label" data-i18n="arbre-lbl-lieu">Lieu</p>
+        <p class="arbre-value" data-i18n="arbre-val-lieu">Madagascar</p>
       </div>
     </div>
-    <p class="arbre-note reveal d3">Le dattier est l'un des arbres les plus bénis mentionnés dans le Coran. Il porte ses fruits généreusement, offre de l'ombre à ceux qui s'approchent, et continue à nourrir longtemps après ceux qui l'ont planté.</p>
+    <p class="arbre-note reveal d3" data-i18n="arbre-note">Le dattier est l'un des arbres les plus bénis mentionnés dans le Coran. Il porte ses fruits généreusement, offre de l'ombre à ceux qui s'approchent, et continue à nourrir longtemps après ceux qui l'ont planté.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -301,11 +336,11 @@
 <!-- ═══ IMPACT ═══ -->
 <section class="section-impact">
   <div class="container">
-    <span class="tag reveal">Son impact</span>
-    <h2 class="section-title reveal d1">Un geste <em>durable</em></h2>
+    <span class="tag reveal" data-i18n="impact-tag">Son impact</span>
+    <h2 class="section-title reveal d1" data-i18n="impact-h2">Un geste <em>durable</em></h2>
     <div class="impact-card reveal d2">
-      <p class="impact-headline">Un dattier peut vivre plusieurs siècles. Chaque année, il séquestre du carbone, régénère les sols alentour et perpétue une chaîne de bienfaits qui commence aujourd'hui.</p>
-      <p class="body-text">Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.</p>
+      <p class="impact-headline" data-i18n="impact-hl">Un dattier peut vivre plusieurs siècles. Chaque année, il séquestre du carbone, régénère les sols alentour et perpétue une chaîne de bienfaits qui commence aujourd'hui.</p>
+      <p class="body-text" data-i18n="impact-body">Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.</p>
     </div>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
@@ -314,9 +349,9 @@
 <!-- ═══ VIDÉO ═══ -->
 <section class="section-video">
   <div class="container">
-    <span class="tag reveal">La preuve</span>
-    <h2 class="section-title reveal d1">Ton arbre, <em>pour de vrai</em></h2>
-    <p class="body-text reveal d2">La vidéo de ta plantation arrive bientôt.</p>
+    <span class="tag reveal" data-i18n="video-tag">La preuve</span>
+    <h2 class="section-title reveal d1" data-i18n="video-h2">Ton arbre, <em>pour de vrai</em></h2>
+    <p class="body-text reveal d2" data-i18n="video-body">La vidéo de ta plantation arrive bientôt.</p>
     <div class="video-box reveal d3" style="cursor:default;">
       <div class="vid-overlay" style="cursor:default;">
         <div class="video-play" style="border-color:rgba(144,210,160,0.2);opacity:0.5;">
@@ -324,10 +359,10 @@
             <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
           </svg>
         </div>
-        <p class="vid-cta">La vidéo arrive<br>très bientôt</p>
+        <p class="vid-cta" data-i18n="vid-cta">La vidéo arrive<br>très bientôt</p>
       </div>
     </div>
-    <p class="video-tagline reveal d4">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
+    <p class="video-tagline reveal d4" data-i18n="video-tagline">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -336,17 +371,19 @@
 <section class="section-signature">
   <canvas class="sig-ptx"></canvas>
   <div class="container">
-    <p class="sig-from reveal">De la part de</p>
+    <p class="sig-from reveal" data-i18n="sig-from">De la part de</p>
     <h2 class="sig-name reveal d1">Ismail</h2>
     <p class="reveal d2" lang="ar" style="font-family: var(--font-display); font-size: clamp(22px,6vw,30px); font-weight: 300; color: var(--gold); letter-spacing: 0.06em; margin-top: 28px; line-height: 1.5; direction: rtl;">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</p>
-    <p class="reveal d3" style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; color: var(--muted); margin-top: 8px; font-style: italic;">Puisse Allah accepter de nous et de vous.</p>
-    <p class="sig-dua reveal d4">Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
+    <p class="reveal d3" style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; color: var(--muted); margin-top: 8px; font-style: italic;" data-i18n="sig-accepter">Puisse Allah accepter de nous et de vous.</p>
+    <p class="sig-dua reveal d4" data-i18n="sig-dua">Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
     <div class="sig-ornament reveal d3">
       <div class="sig-l"></div><div class="sig-gem"></div><div class="sig-r"></div>
     </div>
   </div>
 </section>
 
+
+<button id="lang-btn" aria-label="Changer la langue / زبان تبدیل کریں">FR · اردو</button>
 
 <script>
 const revealEls = document.querySelectorAll('.reveal');
@@ -394,5 +431,88 @@ function initParticles(canvasEl, sectionEl) {
 
 initParticles(document.getElementById('ptx'), document.querySelector('.hero'));
 initParticles(document.querySelector('.sig-ptx'), document.querySelector('.section-signature'));
+
+/* ─── LANG SWITCHER ─── */
+const T = {
+  fr: {
+    "eyebrow":        "عيد مبارك · Eid al-Adha 1447",
+    "hero-greeting":  `Eid Mubarak,<br><span class="hero-name">Papa</span>`,
+    "hero-line":      "Un arbre a été planté en ton nom.",
+    "hero-sub-text":  "Un bienfait semé ne s'éteint jamais",
+    "scroll-hint":    "Découvrir",
+    "sens-tag":       "Le sens du cadeau",
+    "sens-h2":        "Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha",
+    "sens-body1":     "En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.",
+    "quote-text":     "« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »",
+    "quote-ref":      "Hadith · Sahih Muslim",
+    "sens-body2":     "Chaque fois que cet arbre purifiera l'air, offrira de l'ombre ou nourrira la terre, une récompense continuera, in shaa Allah, te sera inscrite.",
+    "arbre-tag":      "Ton arbre",
+    "arbre-h2":       "Un dattier,<br><em>planté pour toi</em>",
+    "arbre-lbl-esp":  "Espèce",
+    "arbre-val-esp":  "Dattier<br><small>Phoenix dactylifera</small>",
+    "arbre-lbl-lieu": "Lieu",
+    "arbre-val-lieu": "Madagascar",
+    "arbre-note":     "Le dattier est l'un des arbres les plus bénis mentionnés dans le Coran. Il porte ses fruits généreusement, offre de l'ombre à ceux qui s'approchent, et continue à nourrir longtemps après ceux qui l'ont planté.",
+    "impact-tag":     "Son impact",
+    "impact-h2":      "Un geste <em>durable</em>",
+    "impact-hl":      "Un dattier peut vivre plusieurs siècles. Chaque année, il séquestre du carbone, régénère les sols alentour et perpétue une chaîne de bienfaits qui commence aujourd'hui.",
+    "impact-body":    "Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.",
+    "video-tag":      "La preuve",
+    "video-h2":       "Ton arbre, <em>pour de vrai</em>",
+    "video-body":     "La vidéo de ta plantation arrive bientôt.",
+    "vid-cta":        "La vidéo arrive<br>très bientôt",
+    "video-tagline":  "Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.",
+    "sig-from":       "De la part de",
+    "sig-accepter":   "Puisse Allah accepter de nous et de vous.",
+    "sig-dua":        "Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak."
+  },
+  ur: {
+    "eyebrow":        "عید مبارک · عید الاضحی 1447",
+    "hero-greeting":  `عید مبارک،<br><span class="hero-name">Papa</span>`,
+    "hero-line":      "تمہارے نام پر ایک درخت لگایا گیا۔",
+    "hero-sub-text":  "بویا گیا نیکی کا بیج کبھی نہیں بجھتا",
+    "scroll-hint":    "دریافت کریں",
+    "sens-tag":       "اس تحفے کا مطلب",
+    "sens-h2":        "عید الاضحی کے لیے<br>ایک <em>صدقہ جاریہ</em>",
+    "sens-body1":     "اس مبارک دن میں، میں نے تمہیں کچھ ایسا دینا چاہا جو دیرپا ہو۔ کوئی چیز نہیں، بلکہ دنیا میں ایک موجودگی۔ تمہارے نام پر ایک درخت لگایا گیا۔",
+    "quote-text":     "« جب کوئی انسان مر جاتا ہے تو اس کے اعمال رک جاتے ہیں، سوائے تین کے: صدقہ جاریہ، علم جس سے فائدہ اٹھایا جائے، یا نیک اولاد جو اس کے لیے دعا کرے۔ »",
+    "quote-ref":      "حدیث · صحیح مسلم",
+    "sens-body2":     "جب بھی یہ درخت ہوا کو صاف کرے، سایہ دے یا زمین کو تازہ کرے — ان شاء اللہ، تمہارے لیے ثواب لکھا جاتا رہے گا۔",
+    "arbre-tag":      "تمہارا درخت",
+    "arbre-h2":       "تمہارے لیے لگایا گیا<br><em>ایک کھجور کا درخت</em>",
+    "arbre-lbl-esp":  "نوع",
+    "arbre-val-esp":  "کھجور<br><small>Phoenix dactylifera</small>",
+    "arbre-lbl-lieu": "مقام",
+    "arbre-val-lieu": "مڈغاسکر",
+    "arbre-note":     "کھجور کا درخت قرآن میں مذکور سب سے بابرکت درختوں میں سے ایک ہے۔ یہ فراخدلی سے پھل دیتا ہے، قریب آنے والوں کو سایہ فراہم کرتا ہے اور اسے لگانے والوں کے بعد بھی طویل عرصے تک لوگوں کو غذا دیتا رہتا ہے۔",
+    "impact-tag":     "اس کا اثر",
+    "impact-h2":      "ایک <em>پائیدار عمل</em>",
+    "impact-hl":      "کھجور کا درخت کئی صدیوں تک زندہ رہ سکتا ہے۔ ہر سال یہ کاربن جذب کرتا ہے، اردگرد کی مٹی کو تازہ کرتا ہے اور نیکیوں کی ایک ایسی زنجیر قائم رکھتا ہے جو آج سے شروع ہو رہی ہے۔",
+    "impact-body":    "ماحولیات سے بھی آگے، یہ درخت زمین کی یادداشت میں تمہارا نام اٹھائے گا۔ ایک خاموش، صابر اور مسلسل عمل — صدقہ جاریہ کی طرح۔",
+    "video-tag":      "ثبوت",
+    "video-h2":       "تمہارا درخت، <em>واقعی</em>",
+    "video-body":     "تمہاری درخت کاری کی ویڈیو جلد آئے گی۔",
+    "vid-cta":        "ویڈیو بہت جلد<br>آئے گی",
+    "video-tagline":  "یہ لمحہ گزر چکا ہے۔ اس زمین پر کہیں، اسی آسمان تلے، ایک درخت تمہارا نام اٹھائے ہوئے ہے۔",
+    "sig-from":       "کی طرف سے",
+    "sig-accepter":   "اللہ ہم سے اور تم سے قبول فرمائے۔",
+    "sig-dua":        "وہ اس مبارک دن تمہیں صحت، سکون اور اپنی رحمتیں عطا فرمائے۔ عید مبارک۔"
+  }
+};
+
+var currentLang = "fr";
+function setLang(l) {
+  currentLang = l;
+  document.documentElement.lang = l;
+  document.documentElement.dir = l === "ur" ? "rtl" : "ltr";
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (T[l] && T[l][key] !== undefined) el.innerHTML = T[l][key];
+  });
+  document.getElementById("lang-btn").textContent = l === "fr" ? "FR · اردو" : "اردو · FR";
+}
+document.getElementById("lang-btn").addEventListener("click", function() {
+  setLang(currentLang === "fr" ? "ur" : "fr");
+});
 </script>
 </body></html>
