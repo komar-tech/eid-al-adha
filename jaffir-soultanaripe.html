@@ -196,6 +196,33 @@
     .quote-ref { margin-top: 18px; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.7; }
     .quote-diamond-bottom { width: 9px; height: 9px; background: var(--gold); transform: rotate(45deg); margin-inline: auto; opacity: 0.6; margin-top: 22px; }
 
+    /* ─── LANG SWITCHER ─── */
+    #lang-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 9999;
+      background: rgba(11,28,17,0.92);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      padding: 8px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+      line-height: 1.4;
+    }
+    #lang-btn:hover {
+      background: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 4px 24px rgba(201,169,110,0.28);
+    }
+
     /* ─── KEYFRAMES ─── */
     @keyframes fadeSlideDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
     @keyframes nameReveal    { from { opacity: 0; transform: translateY(10px) scale(0.97); filter: blur(4px); } to { opacity: 1; transform: none; filter: blur(0); } }
@@ -217,17 +244,17 @@
   <canvas id="ptx"></canvas>
   <div class="hero-frame"><span class="c3"></span><span class="c4"></span></div>
   <div class="container hero-content">
-    <span class="hero-eyebrow">عيد مبارك · Eid al-Adha 1447</span>
-    <h1 class="hero-greeting">Eid Mubarak,<br><span class="hero-name">Tonton Jaffir</span></h1>
-    <p class="hero-line">Un papayer a été planté en ton nom.</p>
+    <span class="hero-eyebrow" data-i18n="eyebrow">عيد مبارك · Eid al-Adha 1447</span>
+    <h1 class="hero-greeting" data-i18n="hero-greeting">Eid Mubarak,<br><span class="hero-name">Tonton Jaffir</span></h1>
+    <p class="hero-line" data-i18n="hero-line">Un papayer a été planté en ton nom.</p>
     <div class="hero-sub">
       <div class="hero-sub-line"></div>
-      <p class="hero-sub-text">Un bienfait semé ne s'éteint jamais</p>
+      <p class="hero-sub-text" data-i18n="hero-sub-text">Un bienfait semé ne s'éteint jamais</p>
       <div class="hero-sub-line"></div>
     </div>
   </div>
   <div class="scroll-hint">
-    <span class="scroll-hint-label">Découvrir</span>
+    <span class="scroll-hint-label" data-i18n="scroll-hint">Découvrir</span>
     <div class="scroll-hint-bar"></div>
   </div>
 </section>
@@ -236,16 +263,16 @@
 <!-- ═══ SENS ═══ -->
 <section class="section-sens">
   <div class="container">
-    <span class="tag reveal">Le sens du cadeau</span>
-    <h2 class="section-title reveal d1">Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha</h2>
-    <p class="body-text reveal d2">En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.</p>
+    <span class="tag reveal" data-i18n="sens-tag">Le sens du cadeau</span>
+    <h2 class="section-title reveal d1" data-i18n="sens-h2">Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha</h2>
+    <p class="body-text reveal d2" data-i18n="sens-body1">En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.</p>
     <div class="quote-block reveal d3">
       <div class="quote-diamond"></div>
-      <p class="quote-text">« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »</p>
-      <p class="quote-ref">Hadith · Sahih Muslim</p>
+      <p class="quote-text" data-i18n="quote-text">« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »</p>
+      <p class="quote-ref" data-i18n="quote-ref">Hadith · Sahih Muslim</p>
       <div class="quote-diamond-bottom"></div>
     </div>
-    <p class="body-text reveal d4">Chaque fois que cet arbre purifiera l'air, offrira de l'ombre ou nourrira la terre, une récompense continuera, in shaa Allah, te sera inscrite.</p>
+    <p class="body-text reveal d4" data-i18n="sens-body2">Chaque fois que cet arbre purifiera l'air, offrira de l'ombre ou nourrira la terre, une récompense continuera, in shaa Allah, te sera inscrite.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -253,19 +280,19 @@
 <!-- ═══ ARBRE ═══ -->
 <section class="section-arbre">
   <div class="container">
-    <span class="tag reveal">Ton arbre</span>
-    <h2 class="section-title reveal d1">Un papayer,<br><em>planté pour toi</em></h2>
+    <span class="tag reveal" data-i18n="arbre-tag">Ton arbre</span>
+    <h2 class="section-title reveal d1" data-i18n="arbre-h2">Un papayer,<br><em>planté pour toi</em></h2>
     <div class="arbre-grid">
       <div class="arbre-card reveal">
-        <p class="arbre-label">Espèce</p>
-        <p class="arbre-value">Papayer<br><small>Carica papaya</small></p>
+        <p class="arbre-label" data-i18n="arbre-lbl-esp">Espèce</p>
+        <p class="arbre-value" data-i18n="arbre-val-esp">Papayer<br><small>Carica papaya</small></p>
       </div>
       <div class="arbre-card reveal d1">
-        <p class="arbre-label">Lieu</p>
-        <p class="arbre-value">Madagascar</p>
+        <p class="arbre-label" data-i18n="arbre-lbl-lieu">Lieu</p>
+        <p class="arbre-value" data-i18n="arbre-val-lieu">Madagascar</p>
       </div>
     </div>
-    <p class="arbre-note reveal d3">Le papayer est un arbre de rapidité et d'abondance. Il offre ses premiers fruits en moins d'un an, apportant nourriture et bienfaits presque immédiatement. Ses feuilles, ses graines et ses fruits sont tous utilisés dans la médecine traditionnelle locale.</p>
+    <p class="arbre-note reveal d3" data-i18n="arbre-note">Le papayer est un arbre de rapidité et d'abondance. Il offre ses premiers fruits en moins d'un an, apportant nourriture et bienfaits presque immédiatement. Ses feuilles, ses graines et ses fruits sont tous utilisés dans la médecine traditionnelle locale.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -273,11 +300,11 @@
 <!-- ═══ IMPACT ═══ -->
 <section class="section-impact">
   <div class="container">
-    <span class="tag reveal">Son impact</span>
-    <h2 class="section-title reveal d1">Un geste <em>durable</em></h2>
+    <span class="tag reveal" data-i18n="impact-tag">Son impact</span>
+    <h2 class="section-title reveal d1" data-i18n="impact-h2">Un geste <em>durable</em></h2>
     <div class="impact-card reveal d2">
-      <p class="impact-headline">Un papayer commence à produire dès la première année et peut donner des dizaines de kilos de fruits par an. Rapide à pousser et riche en nutriments, il soutient à la fois la biodiversité locale et la nutrition des communautés environnantes.</p>
-      <p class="body-text">Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.</p>
+      <p class="impact-headline" data-i18n="impact-hl">Un papayer commence à produire dès la première année et peut donner des dizaines de kilos de fruits par an. Rapide à pousser et riche en nutriments, il soutient à la fois la biodiversité locale et la nutrition des communautés environnantes.</p>
+      <p class="body-text" data-i18n="impact-body">Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.</p>
     </div>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
@@ -286,9 +313,9 @@
 <!-- ═══ VIDÉO ═══ -->
 <section class="section-video">
   <div class="container">
-    <span class="tag reveal">La preuve</span>
-    <h2 class="section-title reveal d1">Ton arbre, <em>pour de vrai</em></h2>
-    <p class="body-text reveal d2">La voici, filmée sur place.</p>
+    <span class="tag reveal" data-i18n="video-tag">La preuve</span>
+    <h2 class="section-title reveal d1" data-i18n="video-h2">Ton arbre, <em>pour de vrai</em></h2>
+    <p class="body-text reveal d2" data-i18n="video-body">La voici, filmée sur place.</p>
     <div class="video-box reveal d3">
       <video id="vid-arbre" src="https://medias.kebchi.fr/said/arbre-2026/K26052405154_rc0rnj8tcc.mp4" playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
       <div class="vid-overlay" id="vid-overlay">
@@ -297,10 +324,10 @@
             <polygon points="6,4 20,12 6,20" fill="rgba(144,210,160,0.85)" stroke="none"/>
           </svg>
         </div>
-        <p class="vid-cta">Voir la plantation</p>
+        <p class="vid-cta" data-i18n="vid-cta">Voir la plantation</p>
       </div>
     </div>
-    <p class="video-tagline reveal d4">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
+    <p class="video-tagline reveal d4" data-i18n="video-tagline">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -309,17 +336,19 @@
 <section class="section-signature">
   <canvas class="sig-ptx"></canvas>
   <div class="container">
-    <p class="sig-from reveal">De la part de</p>
+    <p class="sig-from reveal" data-i18n="sig-from">De la part de</p>
     <h2 class="sig-name reveal d1">Ismail</h2>
     <p class="reveal d2" lang="ar" style="font-family: var(--font-display); font-size: clamp(22px,6vw,30px); font-weight: 300; color: var(--gold); letter-spacing: 0.06em; margin-top: 28px; line-height: 1.5; direction: rtl;">تَقَبَّلَ اللهُ مِنَّا وَمِنكُم</p>
-    <p class="reveal d3" style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; color: var(--muted); margin-top: 8px; font-style: italic;">Puisse Allah accepter de nous et de vous.</p>
-    <p class="sig-dua reveal d4">Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
+    <p class="reveal d3" style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.14em; color: var(--muted); margin-top: 8px; font-style: italic;" data-i18n="sig-accepter">Puisse Allah accepter de nous et de vous.</p>
+    <p class="sig-dua reveal d4" data-i18n="sig-dua">Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak.</p>
     <div class="sig-ornament reveal d3">
       <div class="sig-l"></div><div class="sig-gem"></div><div class="sig-r"></div>
     </div>
   </div>
 </section>
 
+
+<button id="lang-btn" aria-label="Changer la langue / மொழி மாற்று">FR · த</button>
 
 <script>
 const revealEls = document.querySelectorAll('.reveal');
@@ -373,5 +402,87 @@ const vidCta = overlay.querySelector('.vid-cta');
 overlay.addEventListener('click', function() { overlay.classList.add('hidden'); vid.play(); });
 vid.addEventListener('click', function() { if (!vid.paused) { vid.pause(); vidCta.textContent = 'Reprendre'; overlay.classList.remove('hidden'); } });
 vid.addEventListener('ended', function() { vidCta.textContent = 'Voir à nouveau'; overlay.classList.remove('hidden'); });
+
+/* ─── LANG SWITCHER ─── */
+const T = {
+  fr: {
+    "eyebrow":        "عيد مبارك · Eid al-Adha 1447",
+    "hero-greeting":  `Eid Mubarak,<br><span class="hero-name">Tonton Jaffir</span>`,
+    "hero-line":      "Un papayer a été planté en ton nom.",
+    "hero-sub-text":  "Un bienfait semé ne s'éteint jamais",
+    "scroll-hint":    "Découvrir",
+    "sens-tag":       "Le sens du cadeau",
+    "sens-h2":        "Une <em>sadaqa jariya</em><br>pour l'Aïd al-Adha",
+    "sens-body1":     "En ce jour béni, j'ai voulu t'offrir quelque chose qui dure. Non pas un objet, mais une présence dans le monde. Un arbre a été planté en ton nom.",
+    "quote-text":     "« Lorsqu'un être humain meurt, ses actes s'interrompent, sauf en trois cas : une sadaqa jariya, une connaissance dont on profite, ou un enfant vertueux qui prie pour lui. »",
+    "quote-ref":      "Hadith · Sahih Muslim",
+    "sens-body2":     "Chaque fois que cet arbre purifiera l'air, offrira de l'ombre ou nourrira la terre, une récompense continuera, in shaa Allah, te sera inscrite.",
+    "arbre-tag":      "Ton arbre",
+    "arbre-h2":       "Un papayer,<br><em>planté pour toi</em>",
+    "arbre-lbl-esp":  "Espèce",
+    "arbre-val-esp":  "Papayer<br><small>Carica papaya</small>",
+    "arbre-lbl-lieu": "Lieu",
+    "arbre-val-lieu": "Madagascar",
+    "arbre-note":     "Le papayer est un arbre de rapidité et d'abondance. Il offre ses premiers fruits en moins d'un an, apportant nourriture et bienfaits presque immédiatement. Ses feuilles, ses graines et ses fruits sont tous utilisés dans la médecine traditionnelle locale.",
+    "impact-tag":     "Son impact",
+    "impact-h2":      "Un geste <em>durable</em>",
+    "impact-hl":      "Un papayer commence à produire dès la première année et peut donner des dizaines de kilos de fruits par an. Rapide à pousser et riche en nutriments, il soutient à la fois la biodiversité locale et la nutrition des communautés environnantes.",
+    "impact-body":    "Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.",
+    "video-tag":      "La preuve",
+    "video-h2":       "Ton arbre, <em>pour de vrai</em>",
+    "video-body":     "La voici, filmée sur place.",
+    "vid-cta":        "Voir la plantation",
+    "video-tagline":  "Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.",
+    "sig-from":       "De la part de",
+    "sig-accepter":   "Puisse Allah accepter de nous et de vous.",
+    "sig-dua":        "Qu'Il t'accorde la santé, la paix et Ses grâces en ce jour béni. Eid Mubarak."
+  },
+  ta: {
+    "eyebrow":        "ஈத் முபாரக் · ஈதுல் அத்ஹா 1447",
+    "hero-greeting":  `ஈத் முபாரக்,<br><span class="hero-name">Tonton Jaffir</span>`,
+    "hero-line":      "உன் பெயரில் ஒரு பப்பாளி மரம் நடப்பட்டது.",
+    "hero-sub-text":  "விதைக்கப்பட்ட நன்மை ஒருபோதும் அணையாது",
+    "scroll-hint":    "கண்டறிக",
+    "sens-tag":       "இந்த பரிசின் பொருள்",
+    "sens-h2":        "ஈதுல் அத்ஹாவிற்காக<br>ஒரு <em>சதகா ஜாரியா</em>",
+    "sens-body1":     "இந்த அருளான நாளில், நான் உனக்கு நீடித்து நிலைக்கும் ஒன்றை வழங்க விரும்பினேன். ஒரு பொருளை அல்ல, உலகில் ஒரு இருப்பை. உன் பெயரில் ஒரு மரம் நடப்பட்டது.",
+    "quote-text":     "« ஒரு மனிதன் இறந்துவிட்டால், அவனது செயல்கள் நின்றுவிடும் — மூன்றை தவிர: தொடர்ச்சியான தர்மம், பயனுள்ள அறிவு, அல்லது அவனுக்காக பிரார்த்திக்கும் நல்ல பிள்ளை. »",
+    "quote-ref":      "ஹதீஸ் · சஹீஹ் முஸ்லிம்",
+    "sens-body2":     "இந்த மரம் காற்றை சுத்தப்படுத்தும் போதும், நிழல் தரும் போதும், நிலத்தை வளப்படுத்தும் போதும் — இன்ஷா அல்லாஹ், உனக்கு தொடர்ந்து நற்பலன் பதிவாகும்.",
+    "arbre-tag":      "உனது மரம்",
+    "arbre-h2":       "உனக்காக நடப்பட்ட<br><em>ஒரு பப்பாளி மரம்</em>",
+    "arbre-lbl-esp":  "இனம்",
+    "arbre-val-esp":  "பப்பாளி<br><small>Carica papaya</small>",
+    "arbre-lbl-lieu": "இடம்",
+    "arbre-val-lieu": "மடகாஸ்கர்",
+    "arbre-note":     "பப்பாளி ஒரு வேகமான மற்றும் வளமான மரம். அது ஒரு வருடத்திற்குள் முதல் பழங்களை தருகிறது — உடனடியாக உணவும் நன்மையும் கொடுக்கிறது. அதன் இலைகள், விதைகள், பழங்கள் அனைத்தும் உள்ளூர் பாரம்பரிய மருத்துவத்தில் பயன்படுத்தப்படுகின்றன.",
+    "impact-tag":     "அதன் தாக்கம்",
+    "impact-h2":      "ஒரு <em>நிலையான செயல்</em>",
+    "impact-hl":      "ஒரு பப்பாளி மரம் முதல் வருடத்திலேயே பழம் தர ஆரம்பிக்கிறது — ஒவ்வொரு பருவத்திலும் பல கிலோ பழங்களை தரக்கூடியது. வேகமாக வளரும் இந்த மரம் சுற்றுச்சூழலை வளப்படுத்தி, சமூகங்களுக்கு ஊட்டச்சத்து வழங்குகிறது.",
+    "impact-body":    "சுற்றுச்சூழலுக்கு அப்பால், இந்த மரம் பூமியின் நினைவில் உன் பெயரை தாங்கி நிற்கும். அமைதியான, பொறுமையான, தொடர்ச்சியான ஒரு செயல் — சதகா ஜாரியாவின் சாயலில்.",
+    "video-tag":      "சான்று",
+    "video-h2":       "உன் மரம், <em>உண்மையிலேயே</em>",
+    "video-body":     "அதோ, நேரில் படமாக்கப்பட்டது.",
+    "vid-cta":        "காணொளியைக் காண்க",
+    "video-tagline":  "அந்த தருணம் நிகழ்ந்தது. இந்த பூமியில் எங்கோ, அதே வானின் கீழ், ஒரு மரம் உன் பெயரை சுமக்கிறது.",
+    "sig-from":       "சார்பாக",
+    "sig-accepter":   "அல்லாஹ் நம்மிடமிருந்தும் உங்களிடமிருந்தும் ஏற்றுக்கொள்வானாக.",
+    "sig-dua":        "இந்த அருளான நாளில் அவன் உனக்கு ஆரோக்கியமும், அமைதியும், அவன் அருளும் வழங்கட்டும். ஈத் முபாரக்."
+  }
+};
+
+var currentLang = "fr";
+function setLang(l) {
+  currentLang = l;
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i18n]").forEach(function(el) {
+    var key = el.getAttribute("data-i18n");
+    if (T[l] && T[l][key] !== undefined) el.innerHTML = T[l][key];
+  });
+  document.getElementById("lang-btn").textContent = l === "fr" ? "FR · த" : "த · FR";
+}
+document.getElementById("lang-btn").addEventListener("click", function() {
+  setLang(currentLang === "fr" ? "ta" : "fr");
+});
 </script>
 </body></html>
