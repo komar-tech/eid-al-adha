@@ -127,9 +127,11 @@
 
     /* ════════════════ ARBRE ════════════════ */
     .section-arbre { text-align: center; background: rgba(11,28,17,0.85); }
-    .arbre-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+    .arbre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-block: 28px; }
+    .arbre-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: left; }
     .arbre-label { font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
     .arbre-value { font-family: var(--font-display); font-size: 17px; color: var(--fg); line-height: 1.3; }
+    .arbre-value small { font-size: 12px; color: var(--muted); font-style: italic; }
     .arbre-note { font-family: var(--font-display); font-style: italic; font-size: 17px; line-height: 1.75; color: var(--muted); }
 
     /* ════════════════ IMPACT ════════════════ */
@@ -139,11 +141,12 @@
 
     /* ════════════════ VIDÉO ════════════════ */
     .section-video { text-align: center; background: rgba(11,28,17,0.85); }
-    .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; position: relative; cursor: pointer; border: 1px solid var(--border); }
+    .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; max-height: 72svh; margin-inline: auto; position: relative; cursor: pointer; border: 1px solid var(--border); }
     .video-play { width: 60px; height: 60px; border: 1.5px solid rgba(144,210,160,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s var(--ease), border-color 0.3s; }
     .video-tagline { font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--muted); line-height: 1.7; }
     .vid-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; background: linear-gradient(150deg, rgba(11,28,17,0.90) 0%, rgba(6,9,6,0.94) 100%); cursor: pointer; transition: opacity 0.35s ease; }
     .vid-cta { font-family: var(--font-display); font-style: italic; font-size: 15px; color: rgba(144,210,160,0.75); text-align: center; line-height: 1.6; letter-spacing: 0.02em; }
+    .vid-overlay.hidden { opacity: 0; pointer-events: none; }
 
     /* ════════════════ SIGNATURE ════════════════ */
     .section-signature {
@@ -216,7 +219,7 @@
   <div class="container hero-content">
     <span class="hero-eyebrow">عيد مبارك · Eid al-Adha 1447</span>
     <h1 class="hero-greeting">Eid Mubarak,<br><span class="hero-name">Zayan</span></h1>
-    <p class="hero-line">Un arbre a été planté en ton nom.</p>
+    <p class="hero-line">Un caféier a été planté en ton nom.</p>
     <div class="hero-sub">
       <div class="hero-sub-line"></div>
       <p class="hero-sub-text">Un bienfait semé ne s'éteint jamais</p>
@@ -251,14 +254,18 @@
 <section class="section-arbre">
   <div class="container">
     <span class="tag reveal">Ton arbre</span>
-    <h2 class="section-title reveal d1">Un arbre,<br><em>planté pour toi</em></h2>
-    <div style="max-width:200px; margin-inline:auto; margin-block:28px;">
+    <h2 class="section-title reveal d1">Un caféier,<br><em>planté pour toi</em></h2>
+    <div class="arbre-grid">
       <div class="arbre-card reveal">
+        <p class="arbre-label">Espèce</p>
+        <p class="arbre-value">Caféier<br><small>Coffea arabica</small></p>
+      </div>
+      <div class="arbre-card reveal d1">
         <p class="arbre-label">Lieu</p>
         <p class="arbre-value">Madagascar</p>
       </div>
     </div>
-    <p class="arbre-note reveal d3">Un arbre a été planté en ton nom, quelque part sur cette terre. Il poussera, offrira de l'ombre, nourrira la terre — et continuera à porter tes bienfaits longtemps après toi.</p>
+    <p class="arbre-note reveal d3">Le caféier est un arbre de douceur et d'éveil. Ses baies rouges se récoltent une à une dans une tradition qui unit les hommes depuis des siècles. Son ombre protège la biodiversité et ses racines retiennent les sols des pentes.</p>
     <div class="divider"><div class="divider-gem"></div></div>
   </div>
 </section>
@@ -269,7 +276,7 @@
     <span class="tag reveal">Son impact</span>
     <h2 class="section-title reveal d1">Un geste <em>durable</em></h2>
     <div class="impact-card reveal d2">
-      <p class="impact-headline">En grandissant, cet arbre participera à l'équilibre écologique de la région, captera du carbone et contribuera au bien-être des communautés locales pour des décennies.</p>
+      <p class="impact-headline">Un caféier peut produire ses précieuses cerises pendant plus de trente ans. Planté sous couvert d'arbres nourriciers, il soutient la biodiversité locale, subvient aux besoins des familles qui le cultivent et perpétue une chaîne de bienfaits.</p>
       <p class="body-text">Au-delà de l'écologie, c'est un arbre qui portera ton nom dans la mémoire de la terre. Un geste silencieux, patient et continu — à l'image de la sadaqa jariya.</p>
     </div>
     <div class="divider"><div class="divider-gem"></div></div>
@@ -281,15 +288,16 @@
   <div class="container">
     <span class="tag reveal">La preuve</span>
     <h2 class="section-title reveal d1">Ton arbre, <em>pour de vrai</em></h2>
-    <p class="body-text reveal d2">La vidéo de ta plantation arrive bientôt.</p>
-    <div class="video-box reveal d3" style="cursor:default;">
-      <div class="vid-overlay" style="cursor:default;">
-        <div class="video-play" style="border-color:rgba(144,210,160,0.2);opacity:0.5;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(144,210,160,0.65)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+    <p class="body-text reveal d2">La voici, filmée sur place.</p>
+    <div class="video-box reveal d3">
+      <video id="vid-arbre" src="https://medias.kebchi.fr/said/arbre-2026/K26052405154_26qapog1mu.mp4" playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+      <div class="vid-overlay" id="vid-overlay">
+        <div class="video-play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(144,210,160,0.85)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <polygon points="6,4 20,12 6,20" fill="rgba(144,210,160,0.85)" stroke="none"/>
           </svg>
         </div>
-        <p class="vid-cta">La vidéo arrive<br>très bientôt</p>
+        <p class="vid-cta">Voir la plantation</p>
       </div>
     </div>
     <p class="video-tagline reveal d4">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
@@ -359,5 +367,11 @@ function initParticles(canvasEl, sectionEl) {
 
 initParticles(document.getElementById('ptx'), document.querySelector('.hero'));
 initParticles(document.querySelector('.sig-ptx'), document.querySelector('.section-signature'));
+const vid = document.getElementById('vid-arbre');
+const overlay = document.getElementById('vid-overlay');
+const vidCta = overlay.querySelector('.vid-cta');
+overlay.addEventListener('click', function() { overlay.classList.add('hidden'); vid.play(); });
+vid.addEventListener('click', function() { if (!vid.paused) { vid.pause(); vidCta.textContent = 'Reprendre'; overlay.classList.remove('hidden'); } });
+vid.addEventListener('ended', function() { vidCta.textContent = 'Voir à nouveau'; overlay.classList.remove('hidden'); });
 </script>
 </body></html>

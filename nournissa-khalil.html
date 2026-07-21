@@ -162,7 +162,7 @@
 
     /* ════════════════ VIDÉO ════════════════ */
     .section-video { text-align: center; background: rgba(11,28,17,0.85); }
-    .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; position: relative; cursor: pointer; border: 1px solid var(--border); }
+    .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; max-height: 72svh; margin-inline: auto; position: relative; cursor: pointer; border: 1px solid var(--border); }
     .video-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: linear-gradient(150deg, #0B1C11 0%, #061009 100%); transition: opacity 0.3s ease; }
     .video-play { width: 60px; height: 60px; border: 1.5px solid rgba(144,210,160,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s var(--ease), border-color 0.3s; }
     .video-box:hover .video-play { transform: scale(1.1); border-color: rgba(144,210,160,0.7); }
@@ -316,15 +316,16 @@
   <div class="container">
     <span class="tag reveal">La preuve</span>
     <h2 class="section-title reveal d1">Ton arbre, <em>pour de vrai</em></h2>
-    <p class="body-text reveal d2">La vidéo de ta plantation arrive bientôt.</p>
-    <div class="video-box reveal d3" style="cursor:default;">
-      <div class="vid-overlay" style="cursor:default;">
-        <div class="video-play" style="border-color:rgba(144,210,160,0.2);opacity:0.5;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(144,210,160,0.65)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+    <p class="body-text reveal d2">La voici, filmée sur place.</p>
+    <div class="video-box reveal d3">
+      <video id="vid-arbre" src="https://medias.kebchi.fr/said/arbre-2026/K26052405154_cym081u8be.mp4" playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+      <div class="vid-overlay" id="vid-overlay">
+        <div class="video-play">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(144,210,160,0.85)" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <polygon points="6,4 20,12 6,20" fill="rgba(144,210,160,0.85)" stroke="none"/>
           </svg>
         </div>
-        <p class="vid-cta">La vidéo arrive<br>très bientôt</p>
+        <p class="vid-cta">Voir la plantation</p>
       </div>
     </div>
     <p class="video-tagline reveal d4">Ce moment a eu lieu. Quelque part sur cette terre, sous ce même ciel, un arbre porte ton nom.</p>
@@ -394,5 +395,11 @@ function initParticles(canvasEl, sectionEl) {
 
 initParticles(document.getElementById('ptx'), document.querySelector('.hero'));
 initParticles(document.querySelector('.sig-ptx'), document.querySelector('.section-signature'));
+const vid = document.getElementById('vid-arbre');
+const overlay = document.getElementById('vid-overlay');
+const vidCta = overlay.querySelector('.vid-cta');
+overlay.addEventListener('click', function() { overlay.classList.add('hidden'); vid.play(); });
+vid.addEventListener('click', function() { if (!vid.paused) { vid.pause(); vidCta.textContent = 'Reprendre'; overlay.classList.remove('hidden'); } });
+vid.addEventListener('ended', function() { vidCta.textContent = 'Voir à nouveau'; overlay.classList.remove('hidden'); });
 </script>
 </body></html>
