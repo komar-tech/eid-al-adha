@@ -141,7 +141,7 @@
 
     /* ════════════════ VIDÉO ════════════════ */
     .section-video { text-align: center; background: rgba(11,28,17,0.85); }
-    .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 16/10; position: relative; cursor: pointer; border: 1px solid var(--border); }
+    .video-box { margin-block: 28px; border-radius: 16px; overflow: hidden; aspect-ratio: 9/16; max-height: 72svh; position: relative; cursor: pointer; border: 1px solid var(--border); margin-inline: auto; }
     .video-play { width: 60px; height: 60px; border: 1.5px solid rgba(144,210,160,0.35); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s var(--ease), border-color 0.3s; }
     .video-tagline { font-family: var(--font-display); font-style: italic; font-size: 15px; color: var(--muted); line-height: 1.7; }
     .vid-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; background: linear-gradient(150deg, rgba(11,28,17,0.90) 0%, rgba(6,9,6,0.94) 100%); cursor: pointer; transition: opacity 0.35s ease; }
@@ -370,11 +370,23 @@ initParticles(document.querySelector('.sig-ptx'), document.querySelector('.secti
 
 const vid = document.getElementById('vid-arbre');
 const overlay = document.getElementById('vid-overlay');
+const vidCta = overlay.querySelector('.vid-cta');
+
 overlay.addEventListener('click', function() {
   overlay.classList.add('hidden');
   vid.play();
 });
+
+vid.addEventListener('click', function() {
+  if (!vid.paused) {
+    vid.pause();
+    vidCta.textContent = 'Reprendre';
+    overlay.classList.remove('hidden');
+  }
+});
+
 vid.addEventListener('ended', function() {
+  vidCta.textContent = 'Voir à nouveau';
   overlay.classList.remove('hidden');
 });
 </script>
